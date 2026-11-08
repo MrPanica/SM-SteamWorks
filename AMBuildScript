@@ -213,6 +213,7 @@ class SteamWorksConfig(object):
     # Platform-specifics
     if cxx.target.platform == 'linux':
       cxx.defines += ['_LINUX', 'POSIX']
+      cxx.cflags += ['-fPIC']
       if cxx.family == 'gcc':
         cxx.linkflags += ['-static-libgcc']
       elif cxx.family == 'clang':
